@@ -15,7 +15,7 @@ ARniture is an augmented reality (AR) application designed to revolutionize how 
 
 ## ✨ Features
 - 🛋 **Realistic 3D Furniture Visualization**: Place furniture virtually in your space with lifelike 3D models.
-- 🎨 **Customizable Options**: Change colors, textures, and sizes to match your preferences.
+- 🎨 **Customizable Options**: Change colors.
 - 📏 **Precise Measurements**: See how furniture fits with accurate scaling.
 - 🌍 **AR View**: Bring your furniture ideas to life in real-time augmented reality.
 
@@ -32,12 +32,12 @@ ARniture is an augmented reality (AR) application designed to revolutionize how 
 
 We want to thank the following people for their valuable contributions to this project:
 
-| Name         | GitHub Profile             |
-|--------------|----------------------------|
-| [Dhafin Rizky Aulia]  | [@DhafinRA](https://github.com/DhafinRA) |
-| [Wahyu Arief Rahman] | [@Waafre's](https://github.com/Waafre) |
-| [Alfhiyana]  | [@amorazl](https://github.com/amorazl) |
-| [Mulyadi] | [@LyAmurus](https://github.com/LyAmurus) |
+| NIM          | Name               | GitHub Profile             |
+|--------------|--------------------|----------------------------|
+| 3337210045  | Dhafin Rizky Aulia | [@DhafinRA](https://github.com/DhafinRA) |
+| 3337210024  | Wahyu Arief Rahman | [@Waafre's](https://github.com/Waafre) |
+| 3337210032  | Alfhiyana          | [@amorazl](https://github.com/amorazl) |
+| 3337210011  | Mulyadi            | [@LyAmurus](https://github.com/LyAmurus) |
 
 ---
 
