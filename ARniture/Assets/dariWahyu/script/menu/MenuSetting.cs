@@ -30,6 +30,7 @@ public class MenuSetting : MonoBehaviour
     public string[] product;
     [TextArea]
     public string[] product_desc;
+    string namaBarang;
 
     Vector2 startpos;
     Vector2 endpos;
@@ -43,6 +44,7 @@ public class MenuSetting : MonoBehaviour
         MenuList[0].SetActive(true);
         MenuList[1].SetActive(false);
         MenuList[2].SetActive(false);
+        MenuList[3].SetActive(false);
 
         startpos = panelmenu.anchoredPosition;
         endpos = startpos;
@@ -238,6 +240,7 @@ public class MenuSetting : MonoBehaviour
         det_name.text = cat_product[a].text;
         det_desc.text = product_desc[a];
         det_cat.text = "Ruang "+ cat_kat.text;
+        namaBarang = cat_product[a].text;
     }
     public void detBackClick()
     {
@@ -256,6 +259,34 @@ public class MenuSetting : MonoBehaviour
     {
         endpos = startpos;  // Set target posisi ke posisi awal
         ismoving = true;
+    }
+
+    public void ARmodeClick()
+    {
+        bg.enabled = false;
+        MenuList[2].SetActive(false);
+        MenuList[3].SetActive(true);
+    }
+
+    public void ARmodeBack()
+    {
+        bg.enabled = true;
+        // MenuList[0].SetActive(true);
+        MenuList[2].SetActive(true);
+        MenuList[3].SetActive(false);
+    }
+
+    public void ObjectDetection()
+    {
+        ARmodeClick();
+        for (int i = 0; i < product.Length; i++)
+        {
+            if (namaBarang.Equals(product[i]))
+            {
+                Debug.Log(namaBarang);
+                break;
+            }   
+        }
     }
 
     public void exit()
