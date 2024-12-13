@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -11,6 +12,7 @@ public class MenuSetting : MonoBehaviour
     [SerializeField] Image bg;
     [SerializeField] GameObject[] MenuList;
     [SerializeField] RectTransform panelmenu;
+    [SerializeField] GameObject[] panelList;
 
     [Header("Menu Kategori")]
     [SerializeField] TMP_Text cat_kat;
@@ -32,7 +34,6 @@ public class MenuSetting : MonoBehaviour
     [SerializeField] string[] product_desc;
     [SerializeField] Sprite[] product_img;
 
-
     Vector2 startpos;
     Vector2 endpos;
     
@@ -48,6 +49,10 @@ public class MenuSetting : MonoBehaviour
         MenuList[0].SetActive(true);
         MenuList[1].SetActive(false);
         MenuList[2].SetActive(false);
+
+        panelList[0].SetActive(false);
+        panelList[1].SetActive(false);
+        panelList[2].SetActive(false);
 
         startpos = panelmenu.anchoredPosition;
         endpos = startpos;
@@ -198,12 +203,25 @@ public class MenuSetting : MonoBehaviour
                 bg.color = Color.yellow; break;
             default: bg.color = Color.gray; break;
         }
-        //det_img.sprite = product_img[a];
+        if (a > product_img.Length - 1)
+        {
+            det_img.sprite = Resources.Load<Sprite>("image_not_found");
+        }
+        else
+        {
+            det_img.sprite = product_img[a];
+        }
+
         det_name.text = cat_product[a].text;
         det_desc.text = product_desc[a];
         det_cat.text = "Ruang "+ cat_kat.text;
         DataGlobal.Kategori = cat_kat.text;
         DataGlobal.Produk = det_name.text;
+        DataGlobal.noProduct = a;
+    }
+    public void arModeClick()
+    {
+        SceneManager.LoadScene(1);
     }
     public void detBackClick()
     {
@@ -224,6 +242,34 @@ public class MenuSetting : MonoBehaviour
         ismoving = true;
     }
 
+    public void aboutAppOpen()
+    {
+        panelList[0].SetActive(true);
+    }
+    public void aboutAppClose()
+    {
+        panelList[0].SetActive(false);
+    }
+    public void tutorialOpen()
+    {
+        panelList[1].SetActive(true);
+    }
+    public void tutorialClose()
+    {
+        panelList[1].SetActive(false);
+    }
+    public void aboutUsOpen()
+    {
+        panelList[2].SetActive(true);
+    }
+    public void aboutUsClose()
+    {
+        panelList[2].SetActive(false);
+    }
+    public void ezLink(string username)
+    {
+        Application.OpenURL("https://www.linkedin.com/in/" + username);
+    }
     public void exit()
     {
 #if UNITY_EDITOR
@@ -237,5 +283,7 @@ public class MenuSetting : MonoBehaviour
     {
         public static string Kategori;
         public static string Produk;
+        public static int noProduct;
     }
+
 }
